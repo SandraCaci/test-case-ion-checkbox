@@ -1,36 +1,76 @@
-<demo-base title="Demo of demo-test-input-checkbox">
-  <demo-section sectionId="simpel" title="Simple checkbox">
-    <p>
-      With only the required properties <code>formCtrlName</code>, <code>formGrp</code> and <code>label</code>. The
-      <code>formCtrlName</code> is the name of the boolean <code>FormControl</code> in the <code>formGrp</code> that
-      contains the value of the checkbox (hereafter referred to as: the form control). A checked checkbox corresponds to the
-      value <code>true</code> in the form control and an unchecked checkbox to <code>false</code>.
-    </p>
-    <p><strong>Below you can see that the checkbox which is unchecked by default initially does not show a label, but when you check it, the label appears. 
-      This happens with ionic/angular 8.7.1 or 8.7.2, but not with 8.7.0. It also happens with ionic/angular 8.6.6, but not with 8.6.5 or 8.6.7. 
-      It seems related to the upgrade/downgrade of stencil/core, see <a href="https://github.com/ionic-team/ionic-framework/releases">the Ionic release notes</a>.</strong></p>
-    <demo-test-input-checkbox
-      formCtrlName="enabledTrue"
-      [formGrp]="demoFormGroup"
-      label="Enabled, checked by default"
-    ></demo-test-input-checkbox>
-    <demo-test-input-checkbox
-      formCtrlName="enabledFalse"
-      [formGrp]="demoFormGroup"
-      label="Enabled, unchecked by default"
-    ></demo-test-input-checkbox>
-    <div style="color: red; font-weight: bold; margin-top: 5px;">
-      ↑ This checkbox has the missing label, that appears when you check it. But it should have shown from the start.
-    </div>
-    <p>
-      You get a disabled/readonly checkbox by setting the form control to
-      <code>disabled</code>. No adjustment to the checkbox properties needed.
-    </p>
-    <demo-test-input-checkbox formCtrlName="disabledTrue" [formGrp]="demoFormGroup" label="Disabled, checked by default"></demo-test-input-checkbox>
-    <demo-test-input-checkbox
-      formCtrlName="disabledFalse"
-      [formGrp]="demoFormGroup"
-      label="Disabled, unchecked by default"
-    ></demo-test-input-checkbox>
-  </demo-section>
-</demo-base>
+<div class="demo-container">
+  <div class="demo-content">
+    <h2>Demo of demo-test-input-checkbox</h2>
+    
+    <section class="demo-section">
+      <h3 id="simpel">Checkbox based on form control with label from variable</h3>
+      <p>
+        Below you see several ion-checkboxes based on form controls. The first two are enabled, the second two are disabled by setting the form control to disabled.
+
+        Of each set of two, the first is checked by default, the second is unchecked by default, by providing a default value true or false in the form control.
+        All checkboxes but one get their label from a variable in the component.
+      </p>
+      <p><strong>Below you can see that the checkbox which is based on an enabled form control, default false, with label from variable, initially does not show a label, but when you check the box, the label appears. 
+        </strong></p>
+        <p><strong> This happens with ionic/angular 8.7.1 or 8.7.2, but not with 8.7.0. It also happens with ionic/angular 8.6.6, but not with 8.6.5 or 8.6.7. 
+        It seems related to the upgrade/downgrade of stencil/core, see <a href="https://github.com/ionic-team/ionic-framework/releases">the Ionic release notes</a>.</strong></p>
+      
+      <div class="test-input-container" [formGroup]="demoFormGroup">
+            <ion-checkbox
+            alignment="center"
+            class="ion-focusable"
+            style="margin-bottom: 10px;"
+            formControlName="enabledTrue"
+            justify="start"
+            labelPlacement="end"
+          >
+             {{ label1 }}
+          </ion-checkbox>
+          <ion-checkbox
+            alignment="center"
+            class="ion-focusable"
+            formControlName="enabledFalse"
+            justify="start"
+            labelPlacement="end"
+          >
+             {{ label2 }}
+          </ion-checkbox>
+      <div style="color: red; font-weight: bold; margin-top: 5px; margin-bottom: 5px;">
+        ↑ This checkbox has the missing label, that appears when you check it. But it should have shown from the start. Check the box to make the label appear, and navigate to home (left navigation bar) and back to the checkbox page, or refresh the page, to make the label disappear again.
+      </div>
+          <ion-checkbox
+            alignment="center"
+            class="ion-focusable"
+            formControlName="enabledFalseFixedLabel"
+            justify="start"
+            labelPlacement="end"
+          >Enabled form control, default false, label hardcoded in html
+          </ion-checkbox>
+      </div>
+      <p>
+        Checkboxes based on a disabled form control properly show their labels from variables, regardless the default value.
+      </p>
+      <div class="test-input-container" [formGroup]="demoFormGroup">
+          <ion-checkbox
+            alignment="center"
+            class="ion-focusable"
+            style="margin-bottom: 10px;"
+            formControlName="disabledTrue"
+            justify="start"
+            labelPlacement="end"
+          >
+            {{ label3 }}
+          </ion-checkbox>
+          <ion-checkbox
+            alignment="center"
+            class="ion-focusable"
+            formControlName="disabledFalse"
+            justify="start"
+            labelPlacement="end"
+          >
+            {{ label4 }}
+          </ion-checkbox>
+      </div>
+    </section>
+  </div>
+</div>
