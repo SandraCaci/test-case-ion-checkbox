@@ -1,0 +1,25 @@
+# Documentation: https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings
+# Set the default behavior, in case people don't have core.autocrlf set in their gitconfig.
+* text=auto
+# Shell scripts should use the Linux LF
+*.sh text eol=lf
+scripts/* text eol=lf
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.svg binary
+*.ico binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+# Prettier requires LF instead of CRLF as line ending style.
+# To ensure that Git checkouts of Prettier-formatted files use LF instead of the Windows default CRLF, 
+# the following settings are needed (overrides autocrlf setting in user's gitconfig)
+*.ts text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.htm text eol=lf
+*.scss text eol=lf
+*.css text eol=lf

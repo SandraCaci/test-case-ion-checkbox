@@ -1,0 +1,39 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "strict": true,
+    "noImplicitOverride": true,
+    // we prefer dot notation over bracket notation, even if we are not sure the property exists
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "paths": {
+      "ngx-os-input": ["./dist/ngx-os-input"],
+      "@ngx-os-input-angular/*": ["./projects/ngx-os-input/node_modules/@angular/*"],
+      "@ngx-os-input-api": ["./projects/ngx-os-input/src/public-api"],
+      "@ngx-os-translation-api": ["./projects/ngx-os-translation/src/public-api"],
+      "@ngx-os-translation-angular/*": ["./projects/ngx-os-translation/node_modules/@angular/*"],
+      "@ngx-os-translation/ngx-translate/*": ["./projects/ngx-os-translation/node_modules/@ngx-translate/*"]
+    },
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022", "dom"]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

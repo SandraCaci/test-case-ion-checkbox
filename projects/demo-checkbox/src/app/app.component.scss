@@ -1,0 +1,150 @@
+/* ====================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ==================================== */
+:host {
+  --sidebar-width: 200px;
+  --navigation-height: 60px;
+  --content-max-width: 95rem;
+  --border-color: #e0e0e0;
+  --background-primary: #ffffff;
+  --background-sidebar: #000000;
+  --text-primary: #000000;
+  --text-sidebar: #ffffff;
+  --sidebar-hover: #333333;
+  --z-sidebar: 1000;
+  --z-navigation: 999;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+
+  /* Ensure natural scrolling and positioning context */
+  display: block;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ====================================
+   LAYOUT CONTAINERS
+   ==================================== */
+.content-area {
+  padding: var(--spacing-md);
+  padding-left: calc(var(--sidebar-width) + var(--spacing-md)); /* Account for sidebar + extra spacing */
+  padding-top: calc(var(--navigation-height) + var(--spacing-md)); /* Account for fixed navigation */
+  padding-bottom: var(--spacing-lg); /* Ensure some space at bottom for scrolling */
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto; /* Center horizontally when narrower than viewport */
+}
+
+/* ====================================
+   TOP NAVIGATION BAR
+   ==================================== */
+.top-navigation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--background-primary);
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  z-index: var(--z-navigation);
+  height: var(--navigation-height);
+  border-bottom: 1px solid var(--border-color);
+  gap: var(--spacing-md);
+}
+
+.theme-select-container {
+  max-width: 200px;
+  border: 1px solid var(--ion-color-primary, var(--border-color));
+  border-radius: 4px;
+  padding: 0 var(--spacing-sm);
+}
+
+/* ====================================
+   SIDEBAR NAVIGATION
+   ==================================== */
+.component-nav-links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width);
+  background-color: var(--background-sidebar);
+  z-index: var(--z-sidebar);
+  min-height: 100%;
+  height: auto;
+
+  li {
+    margin: 0;
+    border-bottom: 1px solid var(--sidebar-hover);
+
+    a {
+      text-decoration: none;
+      color: var(--text-sidebar);
+      display: flex;
+      align-items: center;
+      padding: var(--spacing-md);
+      transition: background-color 0.2s ease; /* Smooth hover transition */
+
+      .material-icons {
+        margin-right: var(--spacing-sm);
+        font-size: 20px;
+      }
+
+      &:hover {
+        background-color: var(--sidebar-hover);
+      }
+
+      &.active {
+        font-weight: bold;
+        background-color: var(--sidebar-hover);
+      }
+    }
+  }
+}
+
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+
+@media (max-width: 768px) {
+  :host {
+    --sidebar-width: 60px; /* Collapsed sidebar on mobile */
+  }
+
+  .component-nav-links {
+    a {
+      justify-content: center;
+      padding: var(--spacing-md) var(--spacing-sm); /* Reduce horizontal padding */
+      font-size: 0; /* Hide text by setting font-size to 0 */
+
+      .material-icons {
+        margin-right: 0;
+        font-size: 20px; /* Restore icon size */
+      }
+    }
+  }
+
+  .content-area {
+    padding-left: calc(var(--sidebar-width) + var(--spacing-sm));
+  }
+
+  .top-navigation-bar {
+    left: var(--sidebar-width);
+  }
+}
+@media (max-width: 480px) {
+  .top-navigation-bar {
+    flex-direction: column;
+    height: auto;
+    min-height: var(--navigation-height);
+    gap: var(--spacing-sm);
+  }
+}

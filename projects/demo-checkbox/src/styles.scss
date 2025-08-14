@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Icons */
+@import "material-icons/iconfont/material-icons.css";
+
+/*
+ * App Global CSS for Ionic
+ * ----------------------------------------------------------------------------
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; NOSONAR */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; NOSONAR */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+  --demo-font-size-xxl: 2.4rem;
+  --demo-font-size-xl: 1.6rem;
+  --demo-font-size-l: 1.2rem;
+  --demo-font-size-m: 1rem;
+  --demo-font-size-s: 0.875rem;
+  --demo-font-size-xs: 0.8rem;
+
+  html {
+  /*
+   * For more information on dynamic font scaling, visit the documentation:
+   * https://ionicframework.com/docs/layout/dynamic-font-scaling
+   */
+    --ion-dynamic-font: var(--ion-default-dynamic-font);
+    --ion-font-family: "Roboto", sans-serif;
+  }
+
+  * {
+    font-size: var(--demo-font-size-s);
+  }
+
+  h1 {
+    font-size: var(--demo-font-size-xxl);
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: var(--demo-font-size-xl);
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: var(--demo-font-size-l);
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: var(--demo-font-size-m);
+    font-weight: bold;
+  }
+
+  h5 {
+    font-size: var(--demo-font-size-s);
+    font-weight: bold;
+  }
+
+  h6 {
+    font-size: var(--demo-font-size-xs);
+    font-weight: bold;
+  }
+}

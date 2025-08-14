@@ -1,0 +1,36 @@
+<demo-base title="Demo of demo-test-input-checkbox">
+  <demo-section sectionId="simpel" title="Simple checkbox">
+    <p>
+      With only the required properties <code>formCtrlName</code>, <code>formGrp</code> and <code>label</code>. The
+      <code>formCtrlName</code> is the name of the boolean <code>FormControl</code> in the <code>formGrp</code> that
+      contains the value of the checkbox (hereafter referred to as: the form control). A checked checkbox corresponds to the
+      value <code>true</code> in the form control and an unchecked checkbox to <code>false</code>.
+    </p>
+    <p><strong>Below you can see that the checkbox which is unchecked by default initially does not show a label, but when you check it, the label appears. 
+      This happens with ionic/angular 8.7.1 or 8.7.2, but not with 8.7.0. It also happens with ionic/angular 8.6.6, but not with 8.6.5 or 8.6.7. 
+      It seems related to the upgrade/downgrade of stencil/core, see <a href="https://github.com/ionic-team/ionic-framework/releases">the Ionic release notes</a>.</strong></p>
+    <demo-test-input-checkbox
+      formCtrlName="enabledTrue"
+      [formGrp]="demoFormGroup"
+      label="Enabled, checked by default"
+    ></demo-test-input-checkbox>
+    <demo-test-input-checkbox
+      formCtrlName="enabledFalse"
+      [formGrp]="demoFormGroup"
+      label="Enabled, unchecked by default"
+    ></demo-test-input-checkbox>
+    <div style="color: red; font-weight: bold; margin-top: 5px;">
+      ↑ This checkbox has the missing label, that appears when you check it. But it should have shown from the start.
+    </div>
+    <p>
+      You get a disabled/readonly checkbox by setting the form control to
+      <code>disabled</code>. No adjustment to the checkbox properties needed.
+    </p>
+    <demo-test-input-checkbox formCtrlName="disabledTrue" [formGrp]="demoFormGroup" label="Disabled, checked by default"></demo-test-input-checkbox>
+    <demo-test-input-checkbox
+      formCtrlName="disabledFalse"
+      [formGrp]="demoFormGroup"
+      label="Disabled, unchecked by default"
+    ></demo-test-input-checkbox>
+  </demo-section>
+</demo-base>

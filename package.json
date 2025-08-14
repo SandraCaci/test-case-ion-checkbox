@@ -1,0 +1,35 @@
+{
+  "name": "demo-checkbox",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "ng build demo-checkbox",
+    "start": "ng serve demo-checkbox"
+  },
+  "private": true,
+  "engines": {
+    "node": "22.18.0"
+  },
+  "engineStrict": true,
+  "dependencies": {
+    "@angular/animations": "^20.1.7",
+    "@angular/common": "^20.1.7",
+    "@angular/compiler": "^20.1.7",
+    "@angular/core": "^20.1.7",
+    "@angular/forms": "^20.1.7",
+    "@angular/platform-browser": "^20.1.7",
+    "@angular/platform-browser-dynamic": "^20.1.7",
+    "@angular/router": "^20.1.7",
+    "@ionic/angular": "^8.7.1",
+    "material-icons": "^1.13.14",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1",
+    "zone.js": "~0.15.1"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.1.6",
+    "@angular/cli": "^20.1.6",
+    "@angular/compiler-cli": "^20.1.7",
+    "typescript": "~5.8.3"
+  }
+}
