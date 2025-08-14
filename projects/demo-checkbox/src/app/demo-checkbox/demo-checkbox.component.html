@@ -15,10 +15,9 @@
         <p><strong> This happens with ionic/angular 8.7.1 or 8.7.2, but not with 8.7.0. It also happens with ionic/angular 8.6.6, but not with 8.6.5 or 8.6.7. 
         It seems related to the upgrade/downgrade of stencil/core, see <a href="https://github.com/ionic-team/ionic-framework/releases">the Ionic release notes</a>.</strong></p>
       
-      <div class="test-input-container" [formGroup]="demoFormGroup">
+        <div class="test-input-container" [formGroup]="demoFormGroup">
             <ion-checkbox
             alignment="center"
-            class="ion-focusable"
             style="margin-bottom: 10px;"
             formControlName="enabledTrue"
             justify="start"
@@ -28,7 +27,6 @@
           </ion-checkbox>
           <ion-checkbox
             alignment="center"
-            class="ion-focusable"
             formControlName="enabledFalse"
             justify="start"
             labelPlacement="end"
@@ -40,7 +38,6 @@
       </div>
           <ion-checkbox
             alignment="center"
-            class="ion-focusable"
             formControlName="enabledFalseFixedLabel"
             justify="start"
             labelPlacement="end"
@@ -48,12 +45,11 @@
           </ion-checkbox>
       </div>
       <p>
-        Checkboxes based on a disabled form control properly show their labels from variables, regardless the default value.
+        Checkboxes based on a disabled form control properly show their labels from variables, regardless of the default value.
       </p>
       <div class="test-input-container" [formGroup]="demoFormGroup">
           <ion-checkbox
             alignment="center"
-            class="ion-focusable"
             style="margin-bottom: 10px;"
             formControlName="disabledTrue"
             justify="start"
@@ -63,7 +59,6 @@
           </ion-checkbox>
           <ion-checkbox
             alignment="center"
-            class="ion-focusable"
             formControlName="disabledFalse"
             justify="start"
             labelPlacement="end"
